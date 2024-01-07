@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>travfly</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+         <nav>
+            <div class="logo"> travfly</div>
+
+            <div class="menus">
+             <a href="#">Home</a>
+             <a href="#">Hill Stations</a>
+             <a href="#">Best offer's</a>
+             <a href="#">Contact</a>
+            </div>
+
+            <div class="register">
+             <a href="#reg" id="registerLink">Register</a> 
+           </div>
+        </nav>
+        
+            <section class="htext">
+                    <span>Enjoy</span>
+                    <h1>International Travel Agency</h1>
+                    <br>
+                    <a href="#">Book Your Trip</a>
+            </section>
+    </header>
+    <!-- Overlay background and registration form -->
+    <section id="reg">
+    <div id="overlay"></div>
+    <div id="registrationForm">
+        <form>
+            <!-- Your registration form input fields go here -->
+            <label for="username"><b>Username:</b></label>
+            
+            <input type="text" id="username" placeholder="enter username" name="username" required>
+             <br>
+            <label for="password"><b>Password:</b></label>
+            <input type="password"id="password"name="password" placeholder="enter unique password" required>
+              <br><br>
+            <button type="button" id="btn" onclick="registerUser()"><b>Register</b></button>
+        </form>
+    </div>
+    <script>
+        // Function to display the registration form
+         function showRegistrationForm() {
+           document.getElementById("overlay").style.display = "block";
+           document.getElementById("registrationForm").style.display = "block"; 
+        }   
+
+        // Function to hide the registration form
+        function hideRegistrationForm() {
+            document.getElementById("overlay").style.display = "none";
+            document.getElementById("registrationForm").style.display = "none";
+        }
+        
+        // Event listener for the registration anchor tag
+        document.getElementById("registerLink").addEventListener("click", showRegistrationForm);
+
+        // Event listener for clicking outside the form to close it
+        document.getElementById("overlay").addEventListener("click", hideRegistrationForm);
+        
+        // Function to clear input fields and hide the form after registration
+        function registerUser() {
+        // Retrieve form data
+             var username = document.getElementById("username").value;
+             var password = document.getElementById("password").value;
+
+        // Perform registration logic (you can send data to a server here)
+        // For simplicity, we'll just log the data to the console
+            console.log("Username: " + username + ", Password: " + password);
+
+        // Clear input fields
+            document.getElementById("username").value = "";
+            document.getElementById("password").value = "";
+                
+        // hide registraction form after 5s
+            setTimeout(function () {
+                    hideRegistrationForm();
+                }, 5000);
+            }
+    </script>
+</section>
+</body>
+</html>
