@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>To-Do List</title>
+</head>
+<body>
+
+  <div id="app">
+    <h1>To Do List</h1>
+    <div id="add-task-container">
+      <h2>Add Task</h2>
+      <input type="text" id="task-name" placeholder="Add new task..">
+      <input type="date" id="task-deadline">
+      <select id="task-priority">
+        <option value="high">High</option>
+        <option value="medium">Medium</option>
+        <option value="low">Low</option>
+      </select>
+      <button onclick="addTask()"><b>Add Task</b></button>
+    </div>
+<br><br>
+    <div id="tasks-container">
+        <h2>Tasks</h2>
+        <ul id="tasks-list"></ul>
+      </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

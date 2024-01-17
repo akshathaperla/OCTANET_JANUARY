@@ -1,0 +1,125 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-color: rgb(203, 188, 223);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+#app {
+  color:white;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input {
+  flex: 1;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+
+}
+
+#tasks-container{
+  width: 70%;
+  padding: 10px;
+  background-color:#06142e;
+
+}
+#add-task-container {
+  width: 70%;
+  padding: 10px;
+  background-color:#06142e;
+  
+}
+
+#tasks-list {
+  list-style: none;
+  padding: 0;
+}
+
+.task {
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-container input {
+  margin-right: 10px;
+  width: 20px; /* Adjust width to fix the size of the checkbox */
+  height: 20px;
+  border: 2px solid #333;
+  cursor: pointer;
+  appearance: none;
+}
+
+.checkbox-container input::before {
+  content: '\2713'; /* Unicode check mark character */
+  color: white;
+  font-size: 14px;
+  display: none;
+}
+
+.checkbox-container input:checked::before {
+  display: block;
+}
+
+/* Move this rule after the checkbox styles */
+.task-checkbox:checked + .checkbox-container + span {
+  text-decoration: line-through;
+  color: #888; /* Optional: Change the color for a strikethrough effect */
+}
+
+#add-task-container input,
+#add-task-container select,
+#add-task-container button {
+  margin-bottom: 10px;
+  display: inline;
+}
+.task.completed span {
+    text-decoration: line-through;
+    color: #888; /* Optional: Change the color for a strikethrough effect */
+  }
+
+  h1 {
+    font-size: 2.5em;
+    display: inline-block;
+    position: relative;
+    background: linear-gradient(180deg, rgb(157, 10, 216), #06142e);
+    color: transparent;
+    font-family:Poppins;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: flow 2s linear infinite;
+  }
+  
+  @keyframes flow {
+    0% {
+      background-position: 0% 0%;
+    }
+    100% {
+      background-position: 100% 100%;
+    }
+  }
+  h2{
+    text-decoration:underline;
+    color:white;
+    font-family: poppins;
+     }
+button{
+  border-radius:10%;
+  border: 2px solid black;
+  color:#06142e;
+}
